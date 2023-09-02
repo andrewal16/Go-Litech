@@ -1,0 +1,309 @@
+* {
+    font-family: "GFS Didot";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+  }
+  
+  .header .logo {
+    height: 3rem;
+  }
+  
+  .header-list a {
+    color: white;
+    display: inline-block;
+    font-size: 1.7rem;
+    margin: 0 2.2rem;
+  }
+  
+  .header-list a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid grey;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+  }
+  
+  .header-list a:hover {
+    color: grey;
+  }
+  
+  .header-extra a:hover {
+    color: grey;
+  }
+  
+  .header-list a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .header-extra a {
+    color: white;
+    margin: 0.5rem;
+  }
+  
+  footer {
+    background-color: black;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    height: 10rem;
+  }
+  
+  footer .sosmed {
+    padding: 1rem;
+  }
+  
+  footer .sosmed a {
+    color: white;
+    margin: 1rem;
+  }
+  
+  footer .sosmed a:hover,
+  footer .navbar2 a:hover {
+    color: grey;
+  }
+  
+  footer .navbar2 {
+    margin-bottom: 1rem;
+  }
+  footer .navbar2 a {
+    color: white;
+    padding: 0.7rem 1rem;
+  }
+  
+  footer .copyright p {
+    color: white;
+  }
+  
+  .content {
+    margin-top: 7rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background-color: black;
+    padding: 40px;
+    display: flex;
+    gap: 80px;
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .left {
+    width: 55%;
+  }
+  
+  .judul {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1;
+    color: white;
+  }
+  
+  .text {
+    font-size: 1rem;
+    color: white;
+    margin-top: 0.6rem;
+  }
+  
+  form {
+    margin-top: 1.25rem;
+  }
+  
+  .input {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+  
+  .input input,
+  .input textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: black;
+    border: none;
+    outline: none;
+  }
+  
+  .input.error input,
+  .input.error textarea {
+    border-bottom: 3px solid red;
+  }
+  
+  .input:not(.error) input:focus,
+  .input:not(.error) textarea:focus {
+    border-bottom: 3px solid grey;
+  }
+  
+  .input input::placeholder,
+  .input textarea::placeholder {
+    opacity: 0.6;
+  }
+  .input textarea {
+    resize: none;
+    height: 150px;
+  }
+  
+  .input .err-msg {
+    font-size: 10px;
+    color: rgb(255, 0, 0);
+  }
+  
+  .input-copy {
+    color: white;
+    margin-bottom: 15px;
+    display: flex;
+  }
+  
+  .input-copy p {
+    margin-left: 5px;
+  }
+  
+  .button {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    background-color: rgb(197, 194, 194);
+  }
+  
+  .right {
+    width: 45%;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  
+  .infoBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .infoBox .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.8px solid white;
+    color: black;
+    background-color: white;
+  }
+  
+  .infoBox .text {
+    margin: 0;
+  }
+  
+  .right {
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 62.5%;
+    }
+    #hamburger {
+      display: inline-block;
+    }
+  
+    .header-list {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background: black;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.4s;
+    }
+  
+    .header-list.active {
+      right: 0;
+    }
+  
+    .header-list a {
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  
+    .header-list a:hover::after {
+      transform: scaleX(0.3);
+    }
+  
+    .header-list #list-home:hover::after {
+      transform: scaleX(0.2);
+    }
+  
+    .header-list a::after {
+      transform-origin: 0;
+    }
+  
+    .container {
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+    }
+  
+    .left,
+    .right {
+      width: 100%;
+    }
+    .info {
+      margin-top: 40px;
+    }
+  }
+  
+  @media (max-width: 1366px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  
